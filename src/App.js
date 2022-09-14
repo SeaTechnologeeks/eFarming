@@ -8,7 +8,7 @@ import { Header, MainContainer, CreateContainer } from './components';
 
 const App = () => {
   return (
-  <AnimatePresence>
+  <AnimatePresence exitBeforEnter>
   <div className='w-screen h-screen flex flex-col bg-primary'>
         <Header/>
         
@@ -25,3 +25,4 @@ const App = () => {
 }
 
 export default App
+ 
