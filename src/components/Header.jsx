@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from './img/logo.png';
+import Logo from '../img/logo.png';
 import { MdShoppingBasket } from 'react-icons/md'; 
-import Avatar from './img/avatar.png';
+import Avatar from '../img/avatar.png';
 const Header = () => {
   return (
     <header className='fixed z-50 w-screen  p-6 px-16'>
