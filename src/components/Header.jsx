@@ -4,7 +4,7 @@ import { app } from "../firebase.config";
 import Logo from '../img/logo.png';
 import { MdShoppingBasket, MdAdd, MdLogout } from 'react-icons/md'; 
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Avatar from '../img/avatar.png';
 import { useStateValue } from './context/StateProvider';
 import { actionType } from './context/reducer';
@@ -16,8 +16,7 @@ const Header = () => {
    const provider = new GoogleAuthProvider();
    const [{user},dispatch] = useStateValue();
    const [isMenu,setIsMenu] = useState(false);
-   const navigate = useNavigate();
-
+  
 
   const login = async () => { 
     if(!user){
@@ -33,9 +32,15 @@ const Header = () => {
     }
   };
   const logout = () => {
+   setIsMenu(false);
    firebaseAuth.signOut(firebaseAuth,provider);
    localStorage.clear();
+   dispatch({
+      type:actionType.SET_USER,
+      user:null,
+   });
    window.location.reload(false);
+
   }
   return (
     <header className='fixed z-50 w-screen  p-3 px-4 md:p-6 md:px-16'>
@@ -98,7 +103,7 @@ transition-all duration-100 ease-in-out text-textColor text-base">New Item <MdAd
 
 
 
-<p className="px-4 py-2 flex items-center gap-3 
+<p className="m-2 p-2 rounded-md shadow-md flex items-center gap-3 
 cursor-pointer hover:bg-gray-200
 transition-all duration-100 ease-in-out text-textColor text-base"
 onClick={logout}
