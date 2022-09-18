@@ -122,13 +122,18 @@ onClick={logout}
 
 <div className='flex items-center justify-between md:hidden w-full h-full'>
 
+<motion.div whileHover={{y:5}} whileTap={{scale:0.6}} className="relative flex items-center justify-center">
+<MdShoppingBasket className="text-textColor text-2xl  cursor-pointer"/>
+<div className='absolute -top-4 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center'>
+<p className='text-xs text-white font-semibold'>3</p>
+</div>
+</motion.div>
+
 <Link to={'/'} className='flex items-center gap-2 cursor-pointer'>
 <motion.img
 whileTap={{scale: 0.6}} whileHover={{y:5}} src={Logo} alt='Logo' className='w-12 object-cover'/>
 <p className='text-headingColor text-xl font-bold'>eFarm</p>
 </Link>
-
-
 
 
 <div className="relative">
