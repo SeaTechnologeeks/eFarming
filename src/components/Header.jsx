@@ -43,7 +43,7 @@ const Header = () => {
 
   }
   return (
-    <header className='fixed z-50 w-screen  p-3 px-4 md:p-6 md:px-16'>
+    <header className='fixed z-50 w-screen  p-3 px-4 md:p-6 md:px-16 '>
     
    {/*Desktop & Tablet */}
 <div className='hidden md:flex w-full h-full items-center justify-between'>
@@ -51,7 +51,7 @@ const Header = () => {
 <Link to={'/'} className='flex items-center gap-2 cursor-pointer'>
 <motion.img
 whileTap={{scale: 0.6}} whileHover={{y:5}} src={Logo} alt='Logo' className='w-12 object-cover'/>
-<p className='text-headingColor text-xl font-bold'>eFarm</p>
+<p className='text-headingColor text-xl font-bold'></p>
 </Link>
 
 <div className='flex items-center gap-8'>
@@ -71,7 +71,7 @@ translate-all ease-in-out cursor-pointer">About Us</li>
 
 <motion.div whileHover={{y:5}} whileTap={{scale:0.6}} className="relative flex items-center justify-center">
 <MdShoppingBasket className="text-textColor text-2xl  cursor-pointer"/>
-<div className='absolute -top-4 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center'>
+<div className='absolute -top-4 -right-2 w-5 h-5 rounded-full bg-greenGrass flex items-center justify-center'>
 <p className='text-xs text-white font-semibold'>3</p>
 </div>
 </motion.div>
@@ -120,7 +120,8 @@ onClick={logout}
 
 {/* Mobile */}
 
-<div className='flex items-center justify-between md:hidden w-full h-full'>
+<div className='flex items-center justify-between 
+md:hidden w-full h-full bg-greenGrass rounded-full px-3 '>
 
 <motion.div whileHover={{y:5}} whileTap={{scale:0.6}} className="relative flex items-center justify-center">
 <MdShoppingBasket className="text-textColor text-2xl  cursor-pointer"/>
@@ -132,7 +133,7 @@ onClick={logout}
 <Link to={'/'} className='flex items-center gap-2 cursor-pointer'>
 <motion.img
 whileTap={{scale: 0.6}} whileHover={{y:5}} src={Logo} alt='Logo' className='w-12 object-cover'/>
-<p className='text-headingColor text-xl font-bold'>eFarm</p>
+<p className='text-headingColor text-xl font-bold'></p>
 </Link>
 
 
