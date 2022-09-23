@@ -1,7 +1,7 @@
 import React from 'react';
 import Delivery from '../img/delivery.png';
 import heroBg from '../img/heroBg.png';
-import agric from '../img/f5.png';
+import agric from '../img/heroBg.png';
 import { motion } from 'framer-motion';
 import cardData from '../utils/data';
 
@@ -48,24 +48,23 @@ const HomeContainer = () => {
         </div>
 
         <div className='py-1 px-10 flex-1 flex items-center relative'>
-          <img src={agric} className='ml-auto h-250 w-full  lg:w-650  ' 
+          <img src={agric} className='ml-auto lg:mt-20' 
           alt='Nature Background'/>
           
-          <div className="w-full h-full backdrop-blur-lg  absolute top-0 left-0
-          flex items-center justify-center px-32 py-4 gap-4 flex-wrap rounded-md  
-          border-b-2 border-rose-500 ">
+          <div className="w-full h-full    absolute top-0 left-0
+          flex items-center justify-center py-4 gap-4 flex-wrap rounded-md">
 
             {
               cardData.map((item) => (
 
                 <motion.div key={item.id} whileTap={{scale: 0.9}} whileHover={{y:5}}  
-                className=" min-w-[190px] h-[255px] p-4 bg-cardOverlay backdrop-blur-md
+                className="lg:w-190px  p-4 bg-cardOverlay  
                 rounded-3xl  flex flex-col items-center justify-center">
              
-                 <img src={item.imageSrc} className="w-40" alt={item.desc}/>
-                 <p className="text-xl  mt-3 font-semibold text-greenGrass cursor-pointer hover:text-white">{item.name}</p>
-                 <p className="text-md  text-white cursor-pointer hover:text-greenGrass my-2">{item.farmer}</p>
-                 <p className="text-sm text-white font-semibold cursor-pointer hover:text-rose-500 "><span className="text-xs text-greenGrass font-semibold">R</span>{item.price}</p>
+                 <img src={item.imageSrc} className=" w-20 lg:w-40" alt={item.desc}/>
+                 <p className="text-base lg:text-xl mt-1 lg:mt-3 font-semibold text-greenGrass cursor-pointer hover:text-white">{item.name}</p>
+                 <p className="text-[13px] lg:text-md  text-greenGrass cursor-pointer hover:text-greenGrass my-1 lg:my-2">{item.farmer}</p>
+                 <p className="text-sm text-rose-500 font-semibold cursor-pointer hover:text-rose-500 "><span className="text-sm text-red-600 font-semibold">R </span>{item.price}</p>
                </motion.div>
    
               ))
