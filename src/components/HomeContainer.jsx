@@ -2,10 +2,8 @@ import React from 'react';
 import Delivery from '../img/delivery.png';
 import heroBg from '../img/heroBg.png';
 import agric from '../img/f5.png';
-import banana from '../img/f9.png';
-import grapes from '../img/f3.png';
-import granadilla from '../img/f10.png';
 import { motion } from 'framer-motion';
+import cardData from '../utils/data';
 
 const HomeContainer = () => {
   return (
@@ -53,27 +51,28 @@ const HomeContainer = () => {
           <img src={agric} className='ml-auto h-250 w-full  lg:w-650  ' 
           alt='Nature Background'/>
           
-          <div className="w-full h-full backdrop-blur-md  absolute right-1 
-          flex items-center justify-center px-4 rounded-md gap-4">
-            <div className="w-full  px-2 py-2 bg-cardOverlay backdrop-blur-md
-             rounded-3xl  flex flex-col items-center justify-center">
-              <img src={grapes} className="w-full" alt='banana'/>
-              <p className="text-base font-semibold text-Green">Grapes</p>
-              <p className="text-sm text-Green font-semibold"><span className="text text-red-600">R</span>10.00</p>
-            </div>
+          <div className="w-full h-full backdrop-blur-lg  absolute top-0 left-0
+          flex items-center justify-center px-32 py-4 gap-4 flex-wrap rounded-md  
+          border-b-2 border-rose-500 ">
 
-            <div className="w-full px-2 py-2 bg-cardOverlay backdrop-blur-md rounded-3xl  flex flex-col items-center justify-center">
-              <img src={banana} className="w-full" alt='banana'/>
-              <p className="text-base font-semibold text-Green">Bananas</p>
-              <p className="text-sm text-Green font-semibold"><span className="text text-red-600">R</span>5.00</p>
-            </div>
+            {
+              cardData.map((item) => (
 
-            <div className="w-full  px-2 py-2 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center">
-              <img src={granadilla} className="w-full" alt='banana'/>
-              <p className="text-base font-semibold text-Green">Granadilla</p>
-              <p className="text-sm text-Green font-semibold"><span className="text text-red-600">R</span>15.00</p>
-            </div>
+                <motion.div key={item.id} whileTap={{scale: 0.9}} whileHover={{y:5}}  
+                className=" min-w-[190px] h-[255px] p-4 bg-cardOverlay backdrop-blur-md
+                rounded-3xl  flex flex-col items-center justify-center">
+             
+                 <img src={item.imageSrc} className="w-40" alt={item.desc}/>
+                 <p className="text-xl  mt-3 font-semibold text-greenGrass cursor-pointer hover:text-white">{item.name}</p>
+                 <p className="text-md  text-white cursor-pointer hover:text-greenGrass my-2">{item.farmer}</p>
+                 <p className="text-sm text-white font-semibold cursor-pointer hover:text-rose-500 "><span className="text-xs text-greenGrass font-semibold">R</span>{item.price}</p>
+               </motion.div>
+   
+              ))
+            }
             
+          
+        
           </div>
           
         </div>
