@@ -1,7 +1,7 @@
 import React from 'react';
 import Delivery from '../img/delivery.png';
 import heroBg from '../img/heroBg.png';
-import agric from '../img/heroBg.png';
+import agric from '../img/f1.png';
 import { motion } from 'framer-motion';
 import cardData from '../utils/data';
 
@@ -22,7 +22,7 @@ const HomeContainer = () => {
             </div>
         </motion.div>
   
-        <p className="text-[2.5rem] lg:text-[4.5rem] font-bold tracking-wide text-red-600">Nearest Farm in{" "}
+        <p className="text-[2.5rem] lg:text-[4.5rem] font-bold tracking-wide ">Nearest Farm in{" "}
          <span className="text-greenGrass text-[3rem] lg:text-[5rem] ">Your City</span></p>
   
         <p className="text-base text-textColor text-center md:text-left md:w-[80%]">
@@ -48,18 +48,19 @@ const HomeContainer = () => {
         </div>
 
         <div className='py-1 px-10 flex-1 flex items-center relative'>
-          <img src={agric} className='ml-auto lg:mt-20' 
+          <img src={agric} className=' ml-auto lg:mt-20 bg-greenGrass rounded-md 
+          bg-clip-padding blur-sm backdrop-filter backdrop-blur-lg bg-opacity-20' 
           alt='Nature Background'/>
           
-          <div className="w-full h-full    absolute top-0 left-0
-          flex items-center justify-center py-4 gap-4 flex-wrap rounded-md">
+          <div className="w-full h-full    absolute  left-30 -top-20
+          flex items-center justify-center py-40 gap-4 flex-wrap rounded-md lg:px-32">
 
             {
               cardData.map((item) => (
 
                 <motion.div key={item.id} whileTap={{scale: 0.9}} whileHover={{y:5}}  
                 className="lg:w-190px  p-4 bg-cardOverlay  
-                rounded-3xl  flex flex-col items-center justify-center">
+                rounded-3xl  flex flex-col items-center justify-center hover:border border-red-500">
              
                  <img src={item.imageSrc} className=" w-20 lg:w-40" alt={item.desc}/>
                  <p className="text-base lg:text-xl mt-1 lg:mt-3 font-semibold text-greenGrass cursor-pointer hover:text-white">{item.name}</p>
