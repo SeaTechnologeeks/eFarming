@@ -52,7 +52,7 @@ const HomeContainer = () => {
           bg-clip-padding blur-sm backdrop-filter backdrop-blur-lg bg-opacity-20' 
           alt='Nature Background'/>
           
-          <div className="w-full h-full    absolute  left-30 -top-20
+          <div className="w-full h-full    absolute left-0 top-0 lg:left-30 lg:-top-20
           flex items-center justify-center py-40 gap-4 flex-wrap rounded-md lg:px-32">
 
             {

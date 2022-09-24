@@ -62,11 +62,17 @@ whileTap={{scale: 0.6}} whileHover={{y:5}} src={Logo} alt='Logo' className='w-12
    exit ={{opacity: 0, x: 200}}
 className='flex items-center gap-8'>
 <li className="text-base text-textColor hover:text-headingColor duration-100
-translate-all ease-in-out cursor-pointer">Shop</li>
+translate-all ease-in-out cursor-pointer" 
+onClick={()=>setIsMenu(false)}
+>Shop</li>
 <li className="text-base text-textColor hover:text-headingColor duration-100
-translate-all ease-in-out cursor-pointer">Community</li>
+translate-all ease-in-out cursor-pointer" 
+onClick={()=>setIsMenu(false)}
+>Community</li>
 <li className="text-base text-textColor hover:text-headingColor duration-100
-translate-all ease-in-out cursor-pointer">About Us</li>
+translate-all ease-in-out cursor-pointer" 
+onClick={()=>setIsMenu(false)}
+>About Us</li>
 </ul>
 
 <motion.div whileHover={{y:5}} whileTap={{scale:0.6}} className="relative flex items-center justify-center">
@@ -96,7 +102,9 @@ alt="userprofile"/>
    {
    user && user.email === 'calvinmseabela@gmail.com' && (
       <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200
-transition-all duration-100 ease-in-out text-textColor text-base">New Item <MdAdd/></p>   
+transition-all duration-100 ease-in-out text-textColor text-base"
+onClick={()=>setIsMenu(false)}
+>New Item <MdAdd/></p>   
    )
 }
  </Link>
