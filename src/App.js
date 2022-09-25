@@ -1,12 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Header, MainContainer, CreateContainer } from './components';
+import { useStateValue } from './components/context/StateProvider';
+import { getAll } from './utils/firebaseFunctions';
 
 
 
 
 const App = () => {
+      const [{},dispatch] = useStateValue();
+      const fetchData =  async () => {
+          await getAll().then((data) =>{
+            console.log(data);
+          })
+      }
+
+      useEffect(() => {
+        
+        fetchData();
+      }, [])
+
   return (
   <AnimatePresence exitBeforEnter>
   <div className='w-screen h-screen flex flex-col bg-primary'>

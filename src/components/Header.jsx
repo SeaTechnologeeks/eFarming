@@ -172,12 +172,12 @@ transition-all duration-100 ease-in-out text-textColor text-base">New Item <MdAd
 
 
  <ul className='flex flex-col'>
-<li className="text-base text-textColor hover:bg-slate-200 duration-100
-translate-all ease-in-out cursor-pointer px-4 py-2">Shop</li>
-<li className="text-base text-textColor hover:bg-slate-200 duration-100
-translate-all ease-in-out cursor-pointer px-4 py-2">Community</li>
-<li className="text-base text-textColor hover:bg-slate-200 duration-100
-translate-all ease-in-out cursor-pointer px-4 py-2">About Us</li>
+      <li className="text-base text-textColor hover:bg-slate-200 duration-100
+         translate-all ease-in-out cursor-pointer px-4 py-2">Shop</li>
+      <li className="text-base text-textColor hover:bg-slate-200 duration-100
+         translate-all ease-in-out cursor-pointer px-4 py-2">Community</li>
+      <li className="text-base text-textColor hover:bg-slate-200 duration-100
+         translate-all ease-in-out cursor-pointer px-4 py-2">About Us</li>
 </ul>
 
 <p className="px-1 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200

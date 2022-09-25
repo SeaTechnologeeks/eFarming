@@ -10,7 +10,11 @@ const reducer = (state,action) => {
             ...state,
             user: action.user,
     };
-
+    case actionType.SET_FARM_ITEM:
+        return {
+            ...state,
+            farmItem: action.farmItems,
+    };
     default:
         return state;
         

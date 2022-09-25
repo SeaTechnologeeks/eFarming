@@ -6,7 +6,7 @@ import pieces from '../img/pieces.png';
 import chicken from '../img/cabbage.png';
 
 
-const cardData = [
+ const cardData = [
     {id: 1, name: 'Bananas',desc:'Organic Banana Fruits', category:'Fruits',farmer:'ZZ2',price:'5.00',imageSrc:banana,},
     {id: 2, name: 'Vegetable Combo',desc:'vegitable Combo', category:'vegetables',farmer:'Sea Farms',price:'25.00',imageSrc:combo,},
     {id: 3, name: 'Egg Dozen',desc:'chicken eggs', category:'Poultry',farmer:'Badimong farms',price:'12.00',imageSrc:dozen,},
@@ -15,3 +15,12 @@ const cardData = [
     {id: 6, name: 'Chicken ',desc:'Chicken', category:'Poultry',farmer:'PKC farms',price:'50.00',imageSrc:chicken,},
 ];
 export default cardData;
+
+
+export const categories = [
+    {id: 1, name: 'Poultry',urlParamName:"Poultry"},
+    {id: 2, name: 'Animal Production',urlParamName:"Animal Production"},
+    {id: 3, name: 'Plant Production',urlParamName:"Plant Production"},
+    
+
+];

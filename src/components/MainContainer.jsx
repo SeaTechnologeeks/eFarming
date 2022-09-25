@@ -1,6 +1,4 @@
 import React from 'react';
-import Delivery from '../img/delivery.png';
-import { motion } from 'framer-motion';
 import HomeContainer from './HomeContainer';
 
 const MainContainer = () => {
