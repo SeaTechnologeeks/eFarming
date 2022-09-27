@@ -16,12 +16,11 @@ const App = () => {
           dispatch({
             type: actionType.SET_FARM_ITEM,
             farmItems: data,
-          })
-          })
+          });
+          });
       }
 
       useEffect(() => {
-        
         fetchData();
       }, [])
 

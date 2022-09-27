@@ -6,7 +6,7 @@ import HomeContainer from './HomeContainer';
 import RowContainer from './RowContainer';
 
 const MainContainer = () => {
-  const [{farmItems},dispatch] = useStateValue();
+  const [{farmItem},dispatch] = useStateValue();
   return (
 <div className='w-full h-auto flex flex-col items-center justify-center'>
   <HomeContainer/>
@@ -32,7 +32,7 @@ const MainContainer = () => {
           </motion.div>
         </div>
       </div>
-      <RowContainer flag={true} data={farmItems}/>
+      <RowContainer flag={true} data={farmItem}/>
     </section>
 </div>
 

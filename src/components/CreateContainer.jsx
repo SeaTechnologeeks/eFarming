@@ -19,7 +19,7 @@ const CreateContainer = () => {
     const [fields, setfields] = useState(false);
     const [alertStatus, setalertStatus] = useState("danger");
     const [msg, setmsg] = useState(null);
-    const [{farmItems},dispatch] = useStateValue();
+    const [{farmItem},dispatch] = useStateValue();
     const [isLoading, setisLoading] = useState(false);
 
 
@@ -67,7 +67,7 @@ const CreateContainer = () => {
     await getAll().then((data) =>{
     dispatch({
       type: actionType.SET_FARM_ITEM,
-      farmItems: data,
+      farmItem: data,
     });
     });
     
@@ -118,7 +118,7 @@ const CreateContainer = () => {
             setfields(false)
             setisLoading(false);
             clearData();
-          }, 2000);
+          }, 3000);
           fetchData();
         }
       } catch (error) {

@@ -6,13 +6,13 @@ import { firestore } from "../firebase.config"
 
 //saving new Item 
 export const saveItem = async (item) => {
-    await setDoc(doc(firestore,'Farms', `${item.farmName}`),item, { merge: false, })
+    await setDoc(doc(firestore,'Farms', `${Date.now()}`), item, { merge: true, })
 };
 
 //getall items 
 export const getAll = async () => {
 const items = await getDocs(
-    query(collection(firestore, 'Farms'), orderBy("farmName","asc"))
+    query(collection(firestore, 'Farms'), orderBy("id","desc"))
 
 );
 return items.docs.map((doc) => doc.data());

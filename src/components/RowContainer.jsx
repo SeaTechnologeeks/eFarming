@@ -1,21 +1,25 @@
-import { motion } from 'framer-motion'
-import React from 'react'
-import { MdShoppingBag } from 'react-icons/md'
-import Berries from '../img/f1.png'
+import { motion } from 'framer-motion';
+import React from 'react';
+import { MdShoppingBag } from 'react-icons/md';
 
 const RowContainer = ({flag, data}) => {
     console.log(data);
   return (
     <div
-        className={`w-full my-12 ${flag ? "overflow-x-scroll" : 
+        className={`w-full flex items-center gap-4 my-12 ${flag ? "overflow-x-scroll" : 
         "overflow-x-hidden"}`}>
-                <div className='w-300 md:w-300 h-auto my-12 backdrop-blur-lg bg-gray-100 p-2 rounded-lg hover:border-b border-red-600 hover:drop-shadow-2xl'>
+            {
+                data && data.map((item) => (
+                        <div key={item.id}
+                         className='w-300 min-w-[300px] md:w-340 md:min-w-[340px] h-auto my-12 backdrop-blur-lg 
+                         bg-gray-100 p-2 rounded-lg hover:border-b 
+                         border-red-600 hover:drop-shadow-2xl'>
                     <div className='w-full flex items-center justify-between'>
                         <motion.img
                             whileHover={{scale:1.2}}
-                            src={Berries}
+                            src={item.imageURL}
                             alt={'Card Image'}
-                            className='w-40 -mt-8'/>
+                            className='w-40 -mt-0'/>
 
                             <motion.div 
                                 whileTap={{scale: 0.75}}
@@ -28,12 +32,12 @@ const RowContainer = ({flag, data}) => {
 
                     <div className='w-full flex flex-col items-end justify-end'>
                         <p className='text-greenGrass font-semibold text-base md:text-lg'>
-                            Strawberries
+                            {item.title}
                         </p>
-                        <p className='mt-1 text-sm text-greenGrass cursor-pointer hover:text-red-500'>PKC Farms</p>
+                        <p className='mt-1 text-sm text-greenGrass cursor-pointer hover:text-red-500'>{item.farmName}</p>
                         <div className='flex items-center gap-8'>
                             <p className='text-lg text-greenGrass font-semibold'>
-                                <span className='text-sm text-red-500'>R</span>10.00
+                                <span className='text-sm text-red-500'>R</span>{item.price}
                             </p>
                         </div>
 
@@ -41,6 +45,8 @@ const RowContainer = ({flag, data}) => {
                     </div>
 
                 </div>
+                ))
+            }
         </div>
   )
 }
