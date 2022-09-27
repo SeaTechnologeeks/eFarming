@@ -16,7 +16,7 @@ const MainContainer = () => {
         <p className='text-3xl font-semibold capitalize text-rose-500 relative
                       before:absolute before:rounded-lg before:content before:w-40 before:h-1 before:-bottom-2
                       before:left-0 before:bg-greenGrass transition-all ease-in-out duration-100'>
-            Fresh & 100% Organic
+            Recently Added Items
         </p>
 
         <div className='hidden md:flex gap-3 items-center px-10'>

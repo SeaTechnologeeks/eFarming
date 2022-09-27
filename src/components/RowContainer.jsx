@@ -3,7 +3,7 @@ import React from 'react';
 import { MdShoppingBag } from 'react-icons/md';
 
 const RowContainer = ({flag, data}) => {
-    console.log(data);
+   
   return (
     <div
         className={`w-full flex items-center gap-4 my-12 ${flag ? "overflow-x-scroll" : 
@@ -17,7 +17,7 @@ const RowContainer = ({flag, data}) => {
                     <div className='w-full flex items-center justify-between'>
                         <motion.img
                             whileHover={{scale:1.2}}
-                            src={item.imageURL}
+                            src={item?.imageURL}
                             alt={'Card Image'}
                             className='w-40 -mt-0'/>
 
