@@ -4,15 +4,19 @@ import { AnimatePresence } from 'framer-motion';
 import { Header, MainContainer, CreateContainer } from './components';
 import { useStateValue } from './components/context/StateProvider';
 import { getAll } from './utils/firebaseFunctions';
+import { actionType } from './components/context/reducer';
 
 
 
 
 const App = () => {
-      const [{},dispatch] = useStateValue();
+      const [{farmItems},dispatch] = useStateValue();
       const fetchData =  async () => {
           await getAll().then((data) =>{
-            console.log(data);
+          dispatch({
+            type: actionType.SET_FARM_ITEM,
+            farmItems: data,
+          })
           })
       }
 

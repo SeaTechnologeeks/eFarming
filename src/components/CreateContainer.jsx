@@ -5,7 +5,9 @@ import { categories } from '../utils/data';
 import Loader from './Loader';
 import { storage } from '../firebase.config';
 import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { saveItem } from '../utils/firebaseFunctions';
+import { getAll, saveItem } from '../utils/firebaseFunctions';
+import { actionType } from './context/reducer';
+import { useStateValue } from './context/StateProvider';
 
 const CreateContainer = () => {
 
@@ -17,13 +19,14 @@ const CreateContainer = () => {
     const [fields, setfields] = useState(false);
     const [alertStatus, setalertStatus] = useState("danger");
     const [msg, setmsg] = useState(null);
+    const [{farmItems},dispatch] = useStateValue();
     const [isLoading, setisLoading] = useState(false);
 
 
     const uploadImage = (e) => {
       setisLoading(true);
       const imageFile = e.target.files[0];
-      const storageRef = ref(storage, `Images/${farmName}/${imageFile.name}`)
+      const storageRef = ref(storage, `Images/${farmName}/${farmName}`)
       const uploadTask = uploadBytesResumable(storageRef,imageFile);
       
       uploadTask.on('state_change',(snapshot) =>{
@@ -48,7 +51,7 @@ const CreateContainer = () => {
           setalertStatus("Success")
           setTimeout(() => {
             setfields(false);
-          },1000);
+          },2000);
         })
       })
     };
@@ -59,8 +62,16 @@ const CreateContainer = () => {
       setprice('');
       setcategory('Select Category');
 
-  }
-  
+  };
+  const fetchData =  async () => {
+    await getAll().then((data) =>{
+    dispatch({
+      type: actionType.SET_FARM_ITEM,
+      farmItems: data,
+    });
+    });
+    
+};
     const deleteImage = () => {
       setisLoading(true);
       const deleteRef    = ref(storage, imageAssets);
@@ -107,7 +118,8 @@ const CreateContainer = () => {
             setfields(false)
             setisLoading(false);
             clearData();
-          }, 1000);
+          }, 2000);
+          fetchData();
         }
       } catch (error) {
         console.log(error);

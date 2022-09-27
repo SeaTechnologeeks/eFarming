@@ -6,7 +6,7 @@ import { firestore } from "../firebase.config"
 
 //saving new Item 
 export const saveItem = async (item) => {
-    await setDoc(doc(firestore,'Farms', `${item.farmName}/${item.title}`),item, { merge: false, })
+    await setDoc(doc(firestore,'Farms', `${item.farmName}`),item, { merge: false, })
 };
 
 //getall items 

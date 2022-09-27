@@ -40,7 +40,7 @@ const HomeContainer = () => {
         type="button"
         className="bg-gradient-to-br from-Green to-greenGrass w-full md:w-auto
         px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out
-         text-base text-white"
+         text-base text-white hover:text-rose-500 font-semibold"
         >
           Order Now
         </motion.button>
@@ -52,19 +52,19 @@ const HomeContainer = () => {
           bg-clip-padding blur-sm backdrop-filter backdrop-blur-lg bg-opacity-20' 
           alt='Nature Background'/>
           
-          <div className="w-full h-full    absolute left-0 top-0 lg:left-30 lg:-top-20
+          <div className="w-full h-full -mt-40  md:-mt-5  absolute left-0 top-0 lg:left-30 lg:-top-20
           flex items-center justify-center py-40 gap-4 flex-wrap rounded-md lg:px-32">
 
             {
               cardData.map((item) => (
 
                 <motion.div key={item.id} whileTap={{scale: 0.9}} whileHover={{y:5}}  
-                className="lg:w-190px  p-4 bg-cardOverlay  
+                className="lg:w-190px min-w-190  md:h-[250px] md:mt-10 p-5 bg-cardOverlay  
                 rounded-3xl  flex flex-col items-center justify-center hover:border border-red-500">
              
                  <img src={item.imageSrc} className=" w-20 lg:w-40" alt={item.desc}/>
-                 <p className="text-base lg:text-xl mt-1 lg:mt-3 font-semibold text-greenGrass cursor-pointer hover:text-white">{item.name}</p>
-                 <p className="text-[13px] lg:text-md  text-greenGrass cursor-pointer hover:text-greenGrass my-1 lg:my-2">{item.farmer}</p>
+                 <p className="text-base lg:text-xl mt-1 lg:mt-3 font-semibold text-greenGrass cursor-pointer">{item.name}</p>
+                 <p className="text-[13px] lg:text-l  text-greenGrass cursor-pointer hover:text-white my-1 lg:my-2">{item.farmer}</p>
                  <p className="text-sm text-rose-500 font-semibold cursor-pointer hover:text-rose-500 "><span className="text-sm text-red-600 font-semibold">R </span>{item.price}</p>
                </motion.div>
    
