@@ -8,6 +8,7 @@ import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from 'firebas
 import { getAll, saveItem } from '../utils/firebaseFunctions';
 import { actionType } from './context/reducer';
 import { useStateValue } from './context/StateProvider';
+import { useNavigate } from 'react-router-dom';
 
 const CreateContainer = () => {
 
@@ -21,12 +22,13 @@ const CreateContainer = () => {
     const [msg, setmsg] = useState(null);
     const [{farmItem},dispatch] = useStateValue();
     const [isLoading, setisLoading] = useState(false);
+   
 
 
     const uploadImage = (e) => {
       setisLoading(true);
       const imageFile = e.target.files[0];
-      const storageRef = ref(storage, `Images/${farmName}/${farmName}`)
+      const storageRef = ref(storage, `Images/${Date.now()}-${imageFile.name}`);
       const uploadTask = uploadBytesResumable(storageRef,imageFile);
       
       uploadTask.on('state_change',(snapshot) =>{
@@ -61,6 +63,7 @@ const CreateContainer = () => {
       setfarmName('');
       setprice('');
       setcategory('Select Category');
+      
 
   };
   const fetchData =  async () => {
@@ -133,6 +136,7 @@ const CreateContainer = () => {
         
      
       }
+  
     };
 
   
